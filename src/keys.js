@@ -1,19 +1,9 @@
-function keys()
+function keyPressed() 
 {
-  if( keyIsPressed )
-    switch( key )
-    {
-      case 'w':
-        camera.y--;
-        break;
-      case 'a': 
-        camera.x--;
-        break;
-      case 's':
-        camera.y++;
-        break;
-      case 'd':
-        camera.x++;
-        break;
-    }
+  keys[ keyCode ] = true;
+}
+
+function keyReleased() 
+{
+  keys[ keyCode ] = false;
 }
