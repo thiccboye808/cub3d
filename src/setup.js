@@ -1,4 +1,7 @@
+const WIDTH = 400;
+const HEIGHT = 400;
+
 function setup()
 {
-  createCanvas( 400, 400 );
+  createCanvas( WIDTH, HEIGHT );
 }

@@ -1,4 +1,4 @@
 function preload()
 {
-  cube = loadImage( './img/cube.png' );
+  cubespr = loadImage( CUBE_PATH );
 }
