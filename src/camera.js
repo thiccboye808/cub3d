@@ -3,27 +3,19 @@ const CAMERA_DRAG = .1;
 
 let camera = 
 { 
-	v: { x: 0, y: 0 }, 
-	x: 0, 
-	y: 0,
-  movement: () =>
+	v: { x: 0, y: 0 }, // velocity in x and y
+	x: 0, // x position
+	y: 0, // y position
+  movement: () => // movement frame handling
 	{
-		if( keys[ KEYCODE_W ] )
-		{
+		if( input.keys[ KEYCODE_W ] )
 			camera.v.y += CAMERA_SPEED;
-		}
-		if( keys[ KEYCODE_A ] )
-		{
+		if( input.keys[ KEYCODE_A ] )
 			camera.v.x += CAMERA_SPEED;
-		}
-		if( keys[ KEYCODE_S ] )
-		{
+		if( input.keys[ KEYCODE_S ] )
 			camera.v.y -= CAMERA_SPEED;
-		}
-		if( keys[ KEYCODE_D ] )
-		{
+		if( input.keys[ KEYCODE_D ] )
 			camera.v.x -= CAMERA_SPEED;
-		}
 		
 		camera.v.x *= ( 1 - CAMERA_DRAG );
 		camera.v.y *= ( 1 - CAMERA_DRAG );

@@ -1,4 +1,6 @@
+const SPRITES = 'data/sprites.json'
+
 function preload()
 {
-  cubespr = loadImage( CUBE_PATH );
+  sprite.preload( SPRITES );
 }
