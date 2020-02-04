@@ -10,7 +10,7 @@ let edit =
     x = Math.round( x );
     y = Math.round( y );
     z = Math.round( z );
-    map.cubes[ x ][ y ][ z ] = c;
+    map.array[ x ][ y ][ z ] = c;
     console.log( `edited cube at (${x}, ${y}, ${z}) to ${c}` );
     return c;
   },

@@ -1,5 +1,6 @@
 {
-  "emptyspr": "",
-  "grayspr": "./image/gray.png",
-  "topsoilspr": "./image/topsoil.png"
+  "empty": "",
+  "gray": "./image/gray.png",
+  "topsoil": "./image/topsoil.png",
+  "topsoil_ledge": "./image/topsoil_ledge.png"
 }

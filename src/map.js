@@ -1,24 +1,22 @@
 let map =
 {
 	max: { x: 25, y: 25, z: 25 }, // max bounds for map
-	cubes: 0, // 3d array of cubes in map (initialized by an init function)
+	array: 0, // 3d array of sprites in map (initialized by an init function)
 	check: ( cube ) => // checks if cube exists in map
 	{
-    return map.cubes[ cube.x ][ cube.y ][ cube.z ];
+    return map.array[ cube.x ][ cube.y ][ cube.z ];
   },
-  empty: () => // initializes map.cubes to an empty array
+  empty: () => // initializes map.array to an empty array
   {
-    map.cubes = new Array();
-    for( let x = 0; x < map.max.x; x++ )
+    map.array = new Array();
+    for( let x = 0; x < map.max.x; x ++ )
     {
-      map.cubes[ x ] = new Array();
-      for( let y = 0; y < map.max.y; y++ )
+      map.array[ x ] = new Array();
+      for( let y = 0; y < map.max.y; y ++ )
       {
-        map.cubes[ x ][ y ] = new Array();
-        for( let z = 0; z < map.max.z; z++ )
-        {
-          map.cubes[ x ][ y ][ z ] = "";
-        }
+        map.array[ x ][ y ] = new Array();
+        for( let z = 0; z < map.max.z; z ++ )
+          map.array[ x ][ y ][ z ] = "";
       }
     }
   }

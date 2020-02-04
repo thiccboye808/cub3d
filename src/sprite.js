@@ -10,7 +10,7 @@ const CUBE_TILE_YZ = 19;
 sprite =
 {
   loaded: false, // if sprites are loaded
-  files: {}, // sprite filenames
+  files: {}, // sprite name
   sprites: {}, // loaded sprites
   preload: ( spritejson ) =>
   {
@@ -22,8 +22,11 @@ sprite =
 		sprite.files = JSON.parse( data );
 		sprite.sprites = Object.assign( {}, sprite.files );
 		for( let spr in sprite.sprites )
-		  if( sprite.sprites.hasOwnProperty( spr ) && spr !== "" )
+		{
+		  if( sprite.sprites.hasOwnProperty( spr ) && sprite.sprites[ spr ] != "" )
 			sprite.sprites[ spr ] = loadImage( sprite.sprites[ spr ] );
+		  sprite.sprites[ spr ].name = spr;
+		}
 		sprite.loaded = true;
 	  } );
   }
