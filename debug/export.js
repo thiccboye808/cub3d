@@ -28,10 +28,10 @@ let ex = // cant use export so shortened to ex
       {
         exportmap[ x ][ y ] = new Array();
         for( let z = 0; z < map.max.z; z ++ )
-          if( map.array[ x ][ y ][ z ] != "" )
+          if( map.array[ x ][ y ][ z ] != sprite.sprites.empty )
             exportmap[ x ][ y ][ z ] = map.array[ x ][ y ][ z ].name;
           else
-            exportmap[ x ][ y ][ z ] = "";
+            exportmap[ x ][ y ][ z ] = "empty";
       }
     }
     ex.download( filename, JSON.stringify( exportmap ) )

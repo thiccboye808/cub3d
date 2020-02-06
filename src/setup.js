@@ -3,6 +3,6 @@ const HEIGHT = 400;
 
 function setup()
 {
-  map.empty();
   createCanvas( WIDTH, HEIGHT );
+  map.empty();
 }
