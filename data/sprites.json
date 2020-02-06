@@ -2,5 +2,7 @@
   "empty": "",
   "gray": "./image/gray.png",
   "topsoil": "./image/topsoil.png",
-  "topsoil_ledge": "./image/topsoil_ledge.png"
+  "topsoil_ledge": "./image/topsoil_ledge.png",
+  "hayden_block": "./image/haydenblock.png",
+  "topsoil_redge": "./image/topsoil_redge.png"
 }

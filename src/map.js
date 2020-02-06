@@ -16,7 +16,7 @@ let map =
       {
         map.array[ x ][ y ] = new Array();
         for( let z = 0; z < map.max.z; z ++ )
-          map.array[ x ][ y ][ z ] = "";
+          map.array[ x ][ y ][ z ] = sprite.sprites.empty;
       }
     }
   }
