@@ -1,6 +1,15 @@
+const MAP_MAX_X_DEFAULT = 25,
+      MAP_MAX_Y_DEFAULT = 25,
+      MAP_MAX_Z_DEFAULT = 25;
+
 let map =
 {
-	max: { x: 25, y: 25, z: 25 }, // max bounds for map
+  max: // max bounds for map
+  { 
+    x: MAP_MAX_X_DEFAULT, 
+    y: MAP_MAX_Y_DEFAULT, 
+    z: MAP_MAX_Z_DEFAULT 
+  }, 
 	array: 0, // 3d array of sprites in map (initialized by an init function)
 	check: ( cube ) => // checks if cube exists in map
 	{

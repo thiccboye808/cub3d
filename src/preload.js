@@ -1,4 +1,4 @@
-const SPRITES = 'data/sprites.json'
+const SPRITES = './data/sprites.json'
 
 function preload()
 {

@@ -1,33 +1,41 @@
-const CUBE_W = 30;
-const CUBE_H = 33;
+const SPRITE_WIDTH_DEFAULT = 30,
+      SPRITE_HEIGHT_DEFAULT = 33;
 
-const CUBE_TILE_XX = 15;
-const CUBE_TILE_XY = 7;
-const CUBE_TILE_YX = -14;
-const CUBE_TILE_YY = 7;
-const CUBE_TILE_YZ = 17;
+// values based on 30 x 33 sprites
+const SPRITE_TILE_XX_DEFAULT = 14,
+			SPRITE_TILE_XY_DEFAULT = 7,
+			SPRITE_TILE_YX_DEFAULT = -14,
+			SPRITE_TILE_YY_DEFAULT = 7,
+			SPRITE_TILE_YZ_DEFAULT = 17;
 
 sprite =
 {
-  loaded: false, // if sprites are loaded
-  files: {}, // sprite name
-  sprites: {}, // loaded sprites
+  filename: {}, // sprite filename
+	sprites: {}, // loaded sprites
+	tile: // sprite projection tiling values
+	{
+		width: SPRITE_WIDTH_DEFAULT,
+		height: SPRITE_HEIGHT_DEFAULT, 
+		xx: SPRITE_TILE_XX_DEFAULT,
+		xy: SPRITE_TILE_XY_DEFAULT,
+		yx: SPRITE_TILE_YX_DEFAULT,
+		yy: SPRITE_TILE_YY_DEFAULT,
+		yz: SPRITE_TILE_YZ_DEFAULT
+	},
   preload: ( spritejson ) =>
   {
-	//let json = require( spritejson );
-
-	fetch( spritejson )
-	  .then( response => response.text() )
-	  .then( ( data ) => {
-		sprite.files = JSON.parse( data );
-		sprite.sprites = Object.assign( {}, sprite.files );
-		for( let spr in sprite.sprites )
-		{
-		  if( sprite.sprites.hasOwnProperty( spr ) && sprite.sprites[ spr ] != "" )
-			sprite.sprites[ spr ] = loadImage( sprite.sprites[ spr ] );
-		  sprite.sprites[ spr ].name = spr;
-		}
-		sprite.loaded = true;
+		fetch( spritejson )
+			.then( response => response.text() )
+			.then( ( data ) => {
+			sprite.filename = JSON.parse( data );
+			sprite.sprites = Object.assign( {}, sprite.filename );
+			for( let spr in sprite.sprites )
+			{
+				if( sprite.sprites.hasOwnProperty( spr ) && sprite.sprites[ spr ] != "" )
+				sprite.sprites[ spr ] = loadImage( sprite.sprites[ spr ] );
+				sprite.sprites[ spr ].name = spr;
+			}
+			sprite.loaded = true;
 	  } );
   }
 }

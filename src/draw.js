@@ -4,7 +4,9 @@ let bg = BG_INIT;
 
 function draw()
 {
-  camera.movement();
+	camera.movement();
+	noSmooth();
+	scale( camera.zoom );
   background( bg );
   if( sprite.loaded )
 	  for( let z = map.max.z - 1; z >= 0; z -- )
@@ -13,7 +15,9 @@ function draw()
 			if( map.array[ x ][ y ][ z ] != undefined && map.array[ x ][ y ][ z ] != sprite.sprites.empty )
 			{
 			  image( map.array[ x ][ y ][ z ], 
-				camera.p.x + ( x * CUBE_TILE_XX ) + ( y * CUBE_TILE_YX ), 
-				camera.p.y + ( x * CUBE_TILE_XY ) + ( y * CUBE_TILE_YY ) + ( z * CUBE_TILE_YZ ) );
+				( camera.p.x + ( x * sprite.tile.xx ) + ( y * sprite.tile.yx ) ), 
+				( camera.p.y + ( x * sprite.tile.xy ) + ( y * sprite.tile.yy ) + ( z * sprite.tile.yz ) ),
+				sprite.tile.width,
+				sprite.tile.height );
 			}
 }
