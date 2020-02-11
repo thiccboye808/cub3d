@@ -15,7 +15,7 @@ let map =
 	{
     return map.array[ cube.x ][ cube.y ][ cube.z ];
   },
-  empty: () => // initializes map.array to an empty array
+  setup: () => // initializes map.array to an empty array
   {
     map.array = new Array();
     for( let x = 0; x < map.max.x; x ++ )

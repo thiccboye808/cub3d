@@ -1,5 +1,6 @@
 {
   "empty": "",
+  "player": "./image/player.png",
   "stone": "./image/stone.png",
   "stone_left_edge": "./image/stone_left_edge.png",
   "soil": "./image/soil.png",

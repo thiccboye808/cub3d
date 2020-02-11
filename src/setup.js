@@ -1,5 +1,6 @@
 function setup()
 {
   canvas.setup();
-  map.empty();
+  map.setup();
+  load.map( "./data/map.json" );
 }

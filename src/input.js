@@ -5,7 +5,12 @@ const KEYCODE_D = 68;
 
 let input =
 {
-  keys: new Array(255)
+  keys: new Array( 255 ),
+  mouse: 
+  {
+    x: 0, y: 0,
+
+  }
 }
 
 function keyPressed() 
@@ -16,4 +21,9 @@ function keyPressed()
 function keyReleased() 
 {
   input.keys[ keyCode ] = false;
+}
+
+function mouseWheel( event ) 
+{
+  camera.zoom -= event.delta / 100;
 }
