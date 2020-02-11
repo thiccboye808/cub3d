@@ -3,15 +3,29 @@ const KEYCODE_A = 65;
 const KEYCODE_S = 83;
 const KEYCODE_D = 68;
 
-let input =
+let Input = function()
 {
-  keys: new Array( 255 ),
-  mouse: 
-  {
-    x: 0, y: 0,
-
-  }
+  this.keys = new Array( 255 );
 }
+
+Input.prototypemouse = function()
+{
+  this.x = 0;
+  this.y = 0;
+}
+
+Input.mouse.prototype.wheel = function()
+  { 
+    this.delta = 0; 
+    this.isnew = 0;
+    this.get = function()
+    { 
+      this.isnew = false;
+      return this.isnew ? this.delta : 0; 
+    }
+  }
+
+let input = new Input();
 
 function keyPressed() 
 {
@@ -25,5 +39,6 @@ function keyReleased()
 
 function mouseWheel( event ) 
 {
-  camera.zoom -= event.delta / 100;
+  input.wheeldelta = event.delta;
+  input.isnewdelta = true;
 }

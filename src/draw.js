@@ -4,8 +4,8 @@ let bg = BG_INIT;
 
 function draw()
 {
-	camera.movement();
-	noSmooth();
+  camera.movement();
+  noSmooth();
 	scale( camera.zoom );
   background( bg );
   if( sprite.loaded )
