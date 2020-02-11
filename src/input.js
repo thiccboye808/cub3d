@@ -1,31 +1,51 @@
-const KEYCODE_W = 87;
-const KEYCODE_A = 65;
-const KEYCODE_S = 83;
-const KEYCODE_D = 68;
+const INPUT_KEY_W = 87,
+      INPUT_KEY_A = 65,
+      INPUT_KEY_S = 83,
+      INPUT_KEY_D = 68,
+      INPUT_MOUSEWHEEL_SMOOTHING = 3;
 
-let Input = function()
+class Mousewheel
 {
-  this.keys = new Array( 255 );
-}
-
-Input.prototypemouse = function()
-{
-  this.x = 0;
-  this.y = 0;
-}
-
-Input.mouse.prototype.wheel = function()
-  { 
-    this.delta = 0; 
-    this.isnew = 0;
-    this.get = function()
-    { 
-      this.isnew = false;
-      return this.isnew ? this.delta : 0; 
-    }
+  constructor()
+  {
+    this.delta = null;
+    this.isnewdelta = false;
   }
 
+  get()
+  {
+    if( this.isnewdelta )
+    {
+      this.isnewdelta = false;
+      return this.delta;
+    }
+    else
+      return 0;
+  }
+}
+
+class Mouse
+{
+  constructor()
+  {
+    this.x = null;
+    this.y = null;
+    this.wheel = new Mousewheel();
+  }
+}
+
+class Input
+{
+  constructor()
+  {
+    this.keys = new Array( 255 );
+    this.mouse = new Mouse();
+  };
+};
+
 let input = new Input();
+
+// p5.js input events:
 
 function keyPressed() 
 {
@@ -39,6 +59,6 @@ function keyReleased()
 
 function mouseWheel( event ) 
 {
-  input.wheeldelta = event.delta;
-  input.isnewdelta = true;
+  input.mouse.wheel.delta = event.delta / INPUT_MOUSEWHEEL_SMOOTHING;
+  input.mouse.wheel.isnewdelta = true;
 }
