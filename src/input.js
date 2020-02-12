@@ -59,6 +59,6 @@ function keyReleased()
 
 function mouseWheel( event ) 
 {
-  input.mouse.wheel.delta = event.delta / INPUT_MOUSEWHEEL_SMOOTHING;
+  input.mouse.wheel.delta = -event.delta / INPUT_MOUSEWHEEL_SMOOTHING;
   input.mouse.wheel.isnewdelta = true;
 }

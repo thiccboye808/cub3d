@@ -6,7 +6,7 @@ function draw()
 {
   camera.movement();
   noSmooth();
-	scale( camera.zoom );
+	scale( camera.zoom.factor * camera.zoom.factor );
   background( bg );
   if( sprite.loaded )
 	  for( let z = map.max.z - 1; z >= 0; z -- )

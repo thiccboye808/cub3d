@@ -3,6 +3,8 @@
   "player": "./image/player.png",
   "stone": "./image/stone.png",
   "stone_left_edge": "./image/stone_left_edge.png",
+  "stone_right_edge": "./image/stone_right_edge.png",
+  "stone_corner_symbol": "./image/stone_corner_symbol.png",
   "soil": "./image/soil.png",
   "topsoil": "./image/topsoil.png",
   "topsoil_corner": "./image/topsoil_corner.png",
