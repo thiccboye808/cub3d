@@ -4,11 +4,14 @@
   "stone": "./image/stone.png",
   "stone_left_edge": "./image/stone_left_edge.png",
   "stone_right_edge": "./image/stone_right_edge.png",
+  "stone_left_back_edge": "./image/stone_left_back_edge.png",
+  "stone_right_back_edge": "./image/stone_right_back_edge.png",
   "stone_corner_symbol": "./image/stone_corner_symbol.png",
   "soil": "./image/soil.png",
   "topsoil": "./image/topsoil.png",
   "topsoil_corner": "./image/topsoil_corner.png",
   "topsoil_corner_left": "./image/topsoil_corner_left.png",
   "topsoil_corner_right": "./image/topsoil_corner_right.png",
-  "topsoil_left_edge": "./image/topsoil_ledge.png"
+  "topsoil_left_edge": "./image/topsoil_ledge.png",
+  "bridge": "./image/bridge.png"
 }

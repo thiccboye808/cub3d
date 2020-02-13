@@ -1,0 +1,11 @@
+TODO: 
+
+* REFACTOR EVERYTHING TO CLASSES (even after theres gonna be some more refactoring...)
+* resize map function
+* 
+* Graphical debug and map editor with:
+  * sprite place tool on right and left click (different sprite for l/r click) 
+  * shift+click selects clicked sprite
+  * selection, copy, paste, and move tools
+
+  
