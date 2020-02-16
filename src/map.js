@@ -1,35 +1,53 @@
-const MAP_MAX_X_DEFAULT = 25,
-      MAP_MAX_Y_DEFAULT = 25,
-      MAP_MAX_Z_DEFAULT = 25;
+// map.js
+//
+// 3d map of sprites
 
-let map =
+class Map
 {
-  max: // max bounds for map
-  { 
-    x: MAP_MAX_X_DEFAULT, 
-    y: MAP_MAX_Y_DEFAULT, 
-    z: MAP_MAX_Z_DEFAULT 
-  }, 
-	array: 0, // 3d array of sprites in map (initialized by an init function)
-	check: ( cube ) => // checks if cube exists in map
-	{
-    return map.array[ cube.x ][ cube.y ][ cube.z ];
-  },
-  setup: () => // initializes map.array to an empty array
+  constructor( mx = 0, my = 0, mz = 0, namearray = [[[]]] )
   {
-    map.array = new Array();
-    for( let x = 0; x < map.max.x; x ++ )
+    this.max = // max bounds for map
+    { 
+      x: mx, 
+      y: my, 
+      z: mz 
+    }
+    this.array = new Array();
+    for( let x = 0; x < this.max.x; x ++ )
     {
-      map.array[ x ] = new Array();
-      for( let y = 0; y < map.max.y; y ++ )
+      this.array[ x ] = new Array();
+      for( let y = 0; y < this.max.y; y ++ )
       {
-        map.array[ x ][ y ] = new Array();
-        for( let z = 0; z < map.max.z; z ++ )
-          map.array[ x ][ y ][ z ] = sprite.sprites.empty;
+        this.array[ x ][ y ] = new Array();
+        for( let z = 0; z < this.max.z; z ++ )
+          this.array[ x ][ y ][ z ] = sprite.sprites[ namearray[ x ][ y ][ z ] ];
+      }
+    }
+  }
+
+  resize( mx, my, mz )
+  {
+    this.max = // set max bounds for map
+    { 
+      x: mx, 
+      y: my, 
+      z: mz 
+    }
+    this.array = new Array();
+    for( let x = 0; x < this.max.x; x ++ )
+    {
+      this.array[ x ] = new Array();
+      for( let y = 0; y < this.max.y; y ++ )
+      {
+        this.array[ x ][ y ] = new Array();
+        for( let z = 0; z < this.max.z; z ++ )
+          this.array[ x ][ y ][ z ] = sprite.sprites[ namearray[ x ][ y ][ z ] ];
       }
     }
   }
 }
+
+let map = new Map();
 
 // TO BE REPLACED/MOVED SOMEDAY:
 function equal( a, b ) 
