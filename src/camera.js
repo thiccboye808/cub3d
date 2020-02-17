@@ -1,33 +1,46 @@
 // camera.js
 //
-// camera object with 
+// camera object with movement functions
+// (movement functions to be moved in the future)
 
-const CAMERA_ZOOM_FACTOR_DEFAULT = 1,
+'use strict';
+
+const CAMERA_VELOCITY_DEFAULT = { x: 0, y: 0 },
+			CAMERA_POSITION_DEFAULT = { x: 0, y: 0 },
+			CAMERA_ZOOM_FACTOR_DEFAULT = 1,
 			CAMERA_ZOOM_DRAG_DEFAULT = .0001,
 			CAMERA_ZOOM_STEP_DEFAULT = .05,
-			CAMERA_ZOOM_MAX_DEFAULT = 100,
 			CAMERA_ZOOM_MIN_DEFAULT = 1,
+			CAMERA_ZOOM_MAX_DEFAULT = 100,
 	  	CAMERA_SPEED_DEFAULT = 1,
 			CAMERA_DRAG_DEFAULT = .1;
 
 class Camera
 { 
-	constructor( input )
+	constructor( input, 
+		v = CAMERA_VELOCITY_DEFAULT, 
+		p = CAMERA_POSITION_DEFAULT,
+		zf = CAMERA_ZOOM_FACTOR_DEFAULT,
+	 	zd = CAMERA_ZOOM_DRAG_DEFAULT,
+	 	zs = CAMERA_ZOOM_STEP_DEFAULT,
+		zmin = CAMERA_ZOOM_MIN_DEFAULT,
+		zmax = CAMERA_ZOOM_MAX_DEFAULT,
+		s = CAMERA_SPEED_DEFAULT,
+		d = CAMERA_DRAG_DEFAULT  )
 	{
 		this.v = { x: 0, y: 0 }; // velocity in x and y
 		this.p = { x: 0, y: 0 }; // position in x and y
 
 		this.zoom = // zoom struct
 		{ 
-			factor: CAMERA_ZOOM_FACTOR_DEFAULT, // factor value of camera zoom
-			drag: CAMERA_ZOOM_DRAG_DEFAULT, // zoom velocity drag
-			step: CAMERA_ZOOM_STEP_DEFAULT, // zoom step size
-			max: CAMERA_ZOOM_MAX_DEFAULT, // zoom max
-			min: CAMERA_ZOOM_MIN_DEFAULT, // zoom min
-			ease: ( t ) => { return t < .5 ? 2 * t * t : -1 + ( 4 - 2 * t ) * t; } // zoom ease function
+			factor: zf, // factor value of camera zoom
+			drag: zd, // zoom velocity drag
+			step: zs, // zoom step size
+			min: zmin, // zoom min
+			max: zmax // zoom max
 		}
-		this.speed = CAMERA_SPEED_DEFAULT; // camera speed
-		this.drag = CAMERA_DRAG_DEFAULT; // camera drag
+		this.speed = s; // camera speed
+		this.drag = d; // camera drag
 		this.input = input; // input handler object
 	}
 
@@ -53,4 +66,4 @@ class Camera
 	}
 };
 
-let camera = new Camera( input );
+let camera = null; // null until Camera constructor is to be invoked in setup() 

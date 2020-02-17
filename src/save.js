@@ -3,6 +3,8 @@
 // debug console functions
 // for exporting
 
+'use strict';
+
 let save =
 {
   download: ( filename, data ) =>
@@ -48,13 +50,13 @@ let save =
             exportmap.array[ x ][ y ][ z ] = "empty";
       }
     } */
-    save.download( filename, JSON.stringify( save.decycle( map ), 
+    save.download( filename, JSON.stringify( save.decycle( map.data ), 
       ( key, val ) =>
       {
         if( key == "array" )
-          for( let x = 0; x < map.max.x; x ++ )
-            for( let y = 0; y < map.max.x; y ++ )
-              for( let z = 0; z < map.max.x; z ++ )
+          for( let x = 0; x < map.data.max.x; x ++ )
+            for( let y = 0; y < map.data.max.x; y ++ )
+              for( let z = 0; z < map.data.max.x; z ++ )
                 val[ x ][ y ][ z ] = ( val[ x ][ y ][ z ] != null ) ? val[ x ][ y ][ z ].name : null;
         return val;
       } ) );

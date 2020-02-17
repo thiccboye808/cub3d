@@ -1,3 +1,10 @@
+// input.js
+// 
+// input handler function
+// \w helper objects
+
+'use strict';
+
 const INPUT_KEY_W = 87,
       INPUT_KEY_A = 65,
       INPUT_KEY_S = 83,
@@ -43,7 +50,7 @@ class Input
   };
 };
 
-let input = new Input();
+let input = null; // null until Input constructor is to be invoked in setup() 
 
 // p5.js input events:
 

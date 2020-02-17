@@ -3,10 +3,12 @@
 ✧༝┉┉┉┉┉┉┉˚*❋ ❋ ❋*˚┉┉┉┉┉┉┉༝✧
 * REFACTOR EVERYTHING TO CLASSES (even after theres gonna be some more refactoring...)
 * resize map function
-* events.js with Events class
-  * brings together all the game comp. objects 
+* relocate camera movement function
+* height function for each sprite in map for character movement.
 * Graphical debug and map editor with: 
   * sprite place tool on right and left click (different sprite for l/r click) 
   * shift+click selects clicked sprite
   * selection, copy, paste, and move tools
-  
+‿︵‿︵‿︵‿︵‿︵‿︵‿︵‿︵‿︵‿︵‿︵‿︵‿︵‿︵‿︵‿︵
+*･ﾟﾟ･*:.｡..｡.:*ﾟ:*:✼✿　future plans　✿✼:*ﾟ:.｡..｡.:*･ﾟﾟ･*
+* live rpg system \w pachinko-atp system for HP, MP, and AP
