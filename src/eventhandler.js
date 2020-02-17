@@ -15,7 +15,7 @@ class EventHandler
   }
 };
 
-let event = null; // null until EventHandler constructor is to be invoked in setup() 
+let event = null; // null until EventHandler constructor is invoked in setup() 
 
 // p5 event handler functions:
 

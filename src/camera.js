@@ -66,4 +66,4 @@ class Camera
 	}
 };
 
-let camera = null; // null until Camera constructor is to be invoked in setup() 
+let camera = null; // null until Camera constructor is invoked in setup() 

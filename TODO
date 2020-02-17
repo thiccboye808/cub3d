@@ -1,7 +1,6 @@
 ✧༝┉┉┉┉┉┉┉˚*❋ ❋ ❋*˚┉┉┉┉┉┉┉༝✧
 ✧･ﾟ: *✧･ﾟ:* TODO *:･ﾟ✧*:･ﾟ✧
 ✧༝┉┉┉┉┉┉┉˚*❋ ❋ ❋*˚┉┉┉┉┉┉┉༝✧
-* REFACTOR EVERYTHING TO CLASSES (even after theres gonna be some more refactoring...)
 * resize map function
 * relocate camera movement function
 * height function for each sprite in map for character movement.

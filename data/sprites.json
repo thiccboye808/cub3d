@@ -4,6 +4,7 @@
   "stone": "./image/stone.png",
   "stone_left_edge": "./image/stone_left_edge.png",
   "stone_right_edge": "./image/stone_right_edge.png",
+  "stone_front_edge": "./image/stone_front_edge.png",
   "stone_left_back_edge": "./image/stone_left_back_edge.png",
   "stone_right_back_edge": "./image/stone_right_back_edge.png",
   "stone_corner_symbol": "./image/stone_corner_symbol.png",
@@ -17,5 +18,6 @@
   "grave": "./image/grave.png",
   "bolder": "./image/bolder.png",
   "grass": "./image/grass.png",
-  "water": "./image/water.png"
+  "water": "./image/water.png",
+  "dog": "./image/dog.png"
 }

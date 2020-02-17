@@ -46,38 +46,16 @@ class Map // map class
 
   resize( mx, my, mz )
   {
-    this.data.max = // set max bounds for map
+    let newmax = // new max bounds for map
     { 
       x: mx, 
       y: my, 
       z: mz 
     };
-    this.data.array = new Array();
-    for( let x = 0; x < this.max.x; x ++ )
-    {
-      this.data.array[ x ] = new Array();
-      for( let y = 0; y < this.max.y; y ++ )
-      {
-        this.data.array[ x ][ y ] = new Array();
-        for( let z = 0; z < this.max.z; z ++ )
-          this.data.array[ x ][ y ][ z ] = ( this.data.array[ x ][ y ][ z ] != undefined ) ? this.data.array[ x ][ y ][ z ] : null;
-      }
-    }
+    var newlength = newmax.x * newmax.y * newmax.z;
+    this.data.array.length += newlength - this.data.array.length;
+    this.data.max = newmax;
   }
 }
 
-let map = null; // null until Map constructor is to be invoked in setup() 
-
-// TO BE REPLACED/MOVED SOMEDAY:
-function equal( a, b ) 
-{
-  let ap = Object.getOwnPropertyNames( a );
-  let bp = Object.getOwnPropertyNames( b );
-  for( let i = 0; i < ap.length; i ++ ) 
-	{
-    let n = ap[ i ];
-    if( a[ n ] !== b[ n ] ) 
-      return false;
-  }
-  return true;
-}
+let map = null; // null until Map constructor is invoked in setup() 

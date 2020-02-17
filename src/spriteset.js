@@ -52,10 +52,11 @@ class Spriteset
 		{
 			if( this.sprites.hasOwnProperty( spr ) && sprite.sprites[ spr ] != "" )
 			this.sprites[ spr ] = loadImage( sprite.sprites[ spr ] );
-			this.sprites[ spr ] = Object.assign( { name: spr }, this.sprites[ spr ] );
+			loadPixels();
+			this.sprites[ spr ] = Object.assign( this.sprites[ spr ], { name: spr } );
 		}
 		this.loaded = true;
 	}
 }
 
-let sprite = null; // null until Spriteset constructor is to be invoked in setup() 
+let sprite = null; // null until Spriteset constructor is invoked in setup() 
