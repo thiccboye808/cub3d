@@ -21,5 +21,6 @@
   "bolder": "./image/bolder.png",
   "grass": "./image/grass.png",
   "water": "./image/water.png",
+  "topwater": "./image/topwater.png",
   "dog": "./image/dog.png"
 }

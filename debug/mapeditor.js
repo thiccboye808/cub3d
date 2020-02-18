@@ -12,7 +12,7 @@ class MapEditor
     this.map = map;
   }
 
-  add( x, y, z, s ) // adds sprite, returns sprite
+  set( x, y, z, s ) // adds sprite, returns sprite
   {
     if( typeof s === "string" )
       s = sprite.sprites[ s.valueOf() ];
@@ -31,21 +31,21 @@ class MapEditor
       {
         let y = ( ( y2 - y1 ) / ( x2 - x1 ) * ( x - x1 ) ) + y1;
         let z = ( ( z2 - z1 ) / ( x2 - x1 ) * ( x - x1 ) ) + z1;
-        this.add( x, y, z, s );
+        this.set( x, y, z, s );
       }
     else if( y1 != y2 )
       for( let y = Math.min( y1, y2 ); y <= Math.max( y1, y2 ); y ++ ) 
       {
         let x = ( ( x2 - x1 ) / ( y2 - y1 ) * ( y - y1 ) ) + x1;
         let z = ( ( z2 - z1 ) / ( y2 - y1 ) * ( y - y1 ) ) + z1;
-        this.add( x, y, z, s );
+        this.set( x, y, z, s );
       }
     else if( z1 != z2 )
       for( let z = Math.min( z1, z2 ); z <= Math.max( z1, z2 ); z ++ ) 
       {
         let x = ( ( x2 - x1 ) / ( z2 - z1 ) * ( z - z1 ) ) + x1;
         let y = ( ( y2 - y1 ) / ( z2 - z1 ) * ( z - z1 ) ) + y1;
-        this.add( x, y, z, s );
+        this.set( x, y, z, s );
       }
     return s;
   }
@@ -55,7 +55,7 @@ class MapEditor
     for( let zs = z; zs <= z + zl; zs ++ )
       for( let xs = x; xs <= x + xl; xs ++ )
         for( let ys = y; ys <= y + yl; ys ++ )
-          this.add( xs, ys, zs, s );
+          this.set( xs, ys, zs, s );
     return s;
   }
 }
