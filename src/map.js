@@ -57,5 +57,3 @@ class Map // map class
     this.data.max = newmax;
   }
 }
-
-let map = null; // null until Map constructor is invoked in setup() 

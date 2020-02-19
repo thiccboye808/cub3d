@@ -4,6 +4,15 @@
 
 'use strict';
 
+let event;
+let input;
+let camera;
+let sprite;
+let map;
+let player;
+let save;
+let edit;
+
 function setup()
 {
   event = new EventHandler();
@@ -11,6 +20,7 @@ function setup()
   camera = new Camera( input );
   sprite = new Spriteset();
   map = new Map();
+  player = new Player( sprite.sprites[ "player" ] );
   save = new MapSaver( map );
   edit = new MapEditor( map );
   sprite.load( "./data/sprites.json" );

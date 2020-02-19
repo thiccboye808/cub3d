@@ -65,5 +65,3 @@ class Camera
 		this.zoom.factor = Math.min( Math.max( this.zoom.factor, this.zoom.min ), this.zoom.max );
 	}
 };
-
-let camera = null; // null until Camera constructor is invoked in setup() 

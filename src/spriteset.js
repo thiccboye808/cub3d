@@ -58,5 +58,3 @@ class Spriteset
 		this.loaded = true;
 	}
 }
-
-let sprite = null; // null until Spriteset constructor is invoked in setup() 

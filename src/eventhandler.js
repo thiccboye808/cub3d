@@ -15,8 +15,6 @@ class EventHandler
   }
 };
 
-let event = null; // null until EventHandler constructor is invoked in setup() 
-
 // p5 event handler functions:
 
 function windowResized() // p5 window resized event function

@@ -30,7 +30,7 @@ class Mousewheel
     else
       return 0;
   }
-}
+};
 
 class Mouse
 {
@@ -40,7 +40,7 @@ class Mouse
     this.y = null;
     this.wheel = new Mousewheel();
   }
-}
+};
 
 class InputHandler
 {
@@ -48,10 +48,8 @@ class InputHandler
   {
     this.keys = new Array( 255 );
     this.mouse = new Mouse();
-  };
+  }
 };
-
-let input = null; // null until Input constructor is invoked in setup() 
 
 // p5.js input events:
 

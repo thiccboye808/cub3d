@@ -59,5 +59,3 @@ class MapEditor
     return s;
   }
 }
-
-let edit = null; // null until Mapeditor constructor is invoked in setup() 

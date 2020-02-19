@@ -55,4 +55,3 @@ class MapSaver
   }
 }
 
-let save = null; // null until Save constructor is invoked in setup() 
