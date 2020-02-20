@@ -16,6 +16,7 @@
   "topsoil_corner_left": "./image/topsoil_corner_left.png",
   "topsoil_corner_right": "./image/topsoil_corner_right.png",
   "topsoil_left_edge": "./image/topsoil_ledge.png",
+  "wood": "./image/wood.png",
   "bridge": "./image/bridge.png",
   "grave": "./image/grave.png",
   "bolder": "./image/bolder.png",

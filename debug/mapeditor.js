@@ -5,6 +5,8 @@
 // eventually will be integrated
 // with a graphical interface
 
+const MAP_EDIT_VERBOSE = false;
+
 class MapEditor
 {
   constructor( map )
@@ -20,7 +22,10 @@ class MapEditor
     y = Math.round( y );
     z = Math.round( z );
     this.map.data.array[ x ][ y ][ z ] = s;
-    console.log( `edited cube at (${x}, ${y}, ${z}) to ${s}` );
+    if( MAP_EDIT_VERBOSE ) 
+    {
+      console.log( `edited cube at (${x}, ${y}, ${z}) to ${s}` );
+    }
     return s;
   }
 
