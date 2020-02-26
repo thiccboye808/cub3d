@@ -29,7 +29,11 @@ function draw()
 					// player sprite draw
 					if( player.check( x, y, z ) )
 					{
-						player.draw();
+						image( sprite.sprites[ player.sprite ],
+							( camera.p.x + ( x * sprite.tile.xx ) + ( y * sprite.tile.yx ) ), 
+							( camera.p.y + ( x * sprite.tile.xy ) + ( y * sprite.tile.yy ) + ( z * sprite.tile.yz ) ),
+							sprite.tile.width,
+							sprite.tile.height );
 					}
 				}
 }

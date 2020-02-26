@@ -17,11 +17,22 @@ class Player
 
   check( x, y, z )
   {
-    return false;
+    return ( x == this.x && y == this.y && z == this.z );
   }
 
-  draw()
-  {
+  movement() // movement frame handling
+	{
+		if( this.input.keys[ INPUT_KEY_W ] )
+			this.y ++;
+		if( this.input.keys[ INPUT_KEY_A ] )
+      this.x ++;
+		if( this.input.keys[ INPUT_KEY_S ] )
+			this.y --;
+		if( this.input.keys[ INPUT_KEY_D ] )
+			this.x --;
+			
+		this.zoom.factor += this.zoom.step * this.input.mouse.wheel.get();
 
-  }
+		this.zoom.factor = Math.min( Math.max( this.zoom.factor, this.zoom.min ), this.zoom.max );
+	}
 }

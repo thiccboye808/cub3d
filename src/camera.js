@@ -6,7 +6,7 @@
 'use strict';
 
 const CAMERA_VELOCITY_DEFAULT = { x: 0, y: 0 },
-			CAMERA_POSITION_DEFAULT = { x: 0, y: 0 },
+			CAMERA_POSITION_DEFAULT = { x: 100, y: -100 },
 			CAMERA_ZOOM_FACTOR_DEFAULT = 1,
 			CAMERA_ZOOM_DRAG_DEFAULT = .0001,
 			CAMERA_ZOOM_STEP_DEFAULT = .05,
@@ -28,8 +28,8 @@ class Camera
 		s = CAMERA_SPEED_DEFAULT,
 		d = CAMERA_DRAG_DEFAULT  )
 	{
-		this.v = { x: 0, y: 0 }; // velocity in x and y
-		this.p = { x: 0, y: 0 }; // position in x and y
+		this.v = v; // velocity in x and y
+		this.p = p; // position in x and y
 
 		this.zoom = // zoom struct
 		{ 

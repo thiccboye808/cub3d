@@ -1,6 +1,7 @@
 ✧༝┉┉┉┉┉┉┉˚*❋ ❋ ❋*˚┉┉┉┉┉┉┉༝✧
 ✧･ﾟ: *✧･ﾟ:* TODO *:･ﾟ✧*:･ﾟ✧
 ✧༝┉┉┉┉┉┉┉˚*❋ ❋ ❋*˚┉┉┉┉┉┉┉༝✧
+* map editor only edit if and if not in array in arguments
 * resize map function
 * relocate camera movement function
 * height function for each sprite in map for character movement.

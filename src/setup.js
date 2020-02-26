@@ -20,7 +20,7 @@ function setup()
   camera = new Camera( input );
   sprite = new Spriteset();
   map = new Map();
-  player = new Player( sprite.sprites[ "player" ] );
+  player = new Player( "player", 3, 8, 6 );
   save = new MapSaver( map );
   edit = new MapEditor( map );
   sprite.load( "./data/sprites.json" );
